@@ -1,185 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UKESH | Portfolio</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ukesh | Minimal Portfolio</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <link rel="stylesheet" href="CSS/style.css" />
-  </head>
-  <body>
-    <!-- NAVBAR -->
-    <header>
-      <nav class="navbar">
-        <div class="logo">UKESH</div>
-        <ul class="nav-links" id="navLinks">
-          <!-- <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
-      <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
-      <li><a href="#projects"><i class="fa-solid fa-code"></i> Projects</a></li>
-      <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a></li> -->
+  <!-- CSS -->
+  <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">UKESH</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-btn" id="menuBtn">☰</div>
+    </nav>
+  </header>
 
-          <li><a href="#home"> Home</a></li>
-          <li><a href="#about"> About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="menu-btn" onclick="toggleMenu()">☰</div>
-      </nav>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1 class="fade-in">Hi, I'm <span>UKESH</span></h1>
-          <p class="fade-in delay-1">Frontend Developer • UI Designer</p>
-
-          <div class="social-icons fade-in delay-2">
-            <a
-              href="https://github.com/ukeshchand"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/ukesh-chand/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fab fa-linkedin"></i>
-            </a>
-
-            <a
-              href="https://www.instagram.com/ukesshhh/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
-
-          <a href="https://github.com/ukeshchand" target="_blank"
-              rel="noopener noreferrer" class="btn fade-in delay-2"> View My Work </a>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="fade-in">Hi, I'm <span>Ukesh</span></h1>
+        <p class="fade-in delay-1">Frontend Developer • UI Designer</p>
+        <div class="social-icons fade-in delay-2">
+          <a href="https://github.com/ukeshchand" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/ukesh-chand/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/ukesshhh/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
-
-        <div class="hero-image fade-in delay-2">
-          <img src="Assets/Images/Profile.png" alt="Ukesh Chand" />
-        </div>
+        <a href="https://github.com/ukeshchand" target="_blank" class="btn fade-in delay-2">View My Work</a>
       </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <h2 class="section-title">About Me</h2>
-      <p class="section-text">
-        I’m a passionate frontend developer focused on building modern,
-        responsive, and user-friendly web experiences using clean code.
-      </p>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section dark" id="projects">
-      <h2 class="section-title">Projects</h2>
-
-      <div class="projects">
-        <div class="card slide-up">
-          <h3>Portfolio Website</h3>
-          <p>Personal responsive portfolio built with HTML, CSS & JS.</p>
-        </div>
-
-        <div class="card slide-up delay-1">
-          <h3>Landing Page</h3>
-          <p>Animated landing page with modern UI and effects.</p>
-        </div>
-
-        <div class="card slide-up delay-2">
-          <h3>Web App UI</h3>
-          <p>Clean and scalable frontend UI design.</p>
-        </div>
+      <div class="hero-image fade-in delay-2">
+        <img src="Assets/Images/Profile.png" alt="Ukesh Chand" />
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section class="section contact" id="contact">
-      <h2 class="section-title">Contact Me</h2>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-text">
+      I build modern, responsive web experiences. Clean code and minimal design are my passion.
+    </p>
+  </section>
 
-      <div class="contact-cards">
-        <!-- <div class="contact-card">
-      <i class="fa-solid fa-envelope"></i>
-      <h3>Email</h3>
-      <p>https://mail.google.com/mail/u/0/#inbox</p>
-    </div> -->
-
-        <div class="contact-card">
-          <a
-            href="https://mail.google.com/mail/u/0/#inbox"
-            target="_blank"
-            class="contact-link"
-          >
-            <i class="fa-brands fa-envelope"></i>
-            <h3>Email</h3>
-            <p>ukeshchand12@gmail.com</p>
-          </a>
-        </div>
-
-        <!-- <div class="contact-card">
-      <i class="fa-brands fa-github"></i>
-      <h3>GitHub</h3>
-      <p>https://github.com/ukeshchand</p>
-    </div> -->
-
-        <div class="contact-card">
-          <a
-            href="https://github.com/ukeshchand"
-            target="_blank"
-            class="contact-link"
-          >
-            <i class="fa-brands fa-github"></i>
-            <h3>Github</h3>
-            <p>ukeshchand</p>
-          </a>
-        </div>
-
-        <!-- <div class="contact-card">
-      <i class="fa-brands fa-linkedin"></i>
-      <h3>LinkedIn</h3>
-      <a href=""></a>
-      <p>https://www.linkedin.com/in/ukesh-chand/</p>
-    </div> -->
-        <div class="contact-card">
-          <a
-            href="https://www.linkedin.com/in/ukesh-chand/"
-            target="_blank"
-            class="contact-link"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-            <h3>LinkedIn</h3>
-            <p>ukesh-chand</p>
-          </a>
-        </div>
+  <!-- PROJECTS -->
+  <section class="section dark" id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div class="card slide-up">
+        <h3>Portfolio Website</h3>
+        <p>My personal responsive portfolio built with HTML, CSS & JS.</p>
+        <a href="https://github.com/ukeshchand/portfolio" target="_blank" class="card-btn">View Project</a>
       </div>
-    </section>
+      <div class="card slide-up delay-1">
+        <h3>Landing Page</h3>
+        <p>Animated landing page with modern UI and smooth effects.</p>
+        <a href="#" class="card-btn">View Project</a>
+      </div>
+      <div class="card slide-up delay-2">
+        <h3>Web App UI</h3>
+        <p>Clean and scalable frontend UI design for web apps.</p>
+        <a href="#" class="card-btn">View Project</a>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-      <p>Made with ❤️ By Ukesh. © 2026 All rights reserved</p>
-    </footer>
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <a href="mailto:ukeshchand12@gmail.com" class="contact-link">
+          <i class="fa-solid fa-envelope"></i>
+          <h3>Email</h3>
+          <p>ukeshchand12@gmail.com</p>
+        </a>
+      </div>
+      <div class="contact-card">
+        <a href="https://github.com/ukeshchand" target="_blank" class="contact-link">
+          <i class="fa-brands fa-github"></i>
+          <h3>GitHub</h3>
+          <p>ukeshchand</p>
+        </a>
+      </div>
+      <div class="contact-card">
+        <a href="https://www.linkedin.com/in/ukesh-chand/" target="_blank" class="contact-link">
+          <i class="fa-brands fa-linkedin"></i>
+          <h3>LinkedIn</h3>
+          <p>ukesh-chand</p>
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <script src="JS/script.js"></script>
-  </body>
+  <footer>
+    <p>Made with ❤️ by Ukesh. © 2026 All rights reserved</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="/JS/script.js"></script>
+</body>
 </html>
