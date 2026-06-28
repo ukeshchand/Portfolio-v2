@@ -3,114 +3,506 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ukesh | Minimal Portfolio</title>
+  <title>Ukesh | Creative Developer & UI Designer</title>
+  <meta name="description" content="Portfolio of Ukesh Chand - Frontend Developer & UI Designer specializing in modern, responsive web experiences">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/CSS/style.css">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+  <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- THEME TOGGLE -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <!-- NAVBAR -->
   <header>
     <nav class="navbar">
-      <div class="logo">UKESH</div>
+      <a href="#home" class="logo">UKESH<span>.</span></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-      <div class="menu-btn" id="menuBtn">☰</div>
+      <div class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
   </header>
 
   <!-- HERO -->
   <section class="hero" id="home">
+    <canvas id="particleCanvas"></canvas>
     <div class="hero-content">
       <div class="hero-text">
-        <h1 class="fade-in">Hi, I'm <span>Ukesh</span></h1>
-        <p class="fade-in delay-1">Frontend Developer • UI Designer</p>
-        <div class="social-icons fade-in delay-2">
-          <a href="https://github.com/ukeshchand" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/ukesh-chand/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/ukesshhh/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <p class="hero-greeting fade-in">Hello, World! 👋</p>
+        <h1 class="fade-in delay-1">I'm <span class="gradient-text">Ukesh</span></h1>
+        <div class="typing-container fade-in delay-2">
+          <span class="typing-text"></span>
+          <span class="typing-cursor">|</span>
         </div>
-        <a href="https://github.com/ukeshchand" target="_blank" class="btn fade-in delay-2">View My Work</a>
+        <p class="hero-description fade-in delay-2">Crafting digital experiences with clean code and creative design. Passionate about building beautiful, functional websites that make an impact.</p>
+        <div class="social-icons fade-in delay-3">
+          <a href="https://github.com/ukeshchand" target="_blank" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/ukesh-chand/" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/ukesshhh/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="hero-btns fade-in delay-3">
+          <a href="#projects" class="btn btn-primary magnetic">View My Work</a>
+          <a href="#contact" class="btn btn-outline magnetic">Get In Touch</a>
+        </div>
       </div>
       <div class="hero-image fade-in delay-2">
-        <img src="Assets/Images/Profile.png" alt="Ukesh Chand" />
+        <div class="image-wrapper">
+          <div class="image-glow"></div>
+          <img src="Assets/Images/Ukesh.jpeg" alt="Ukesh Chand" />
+          <div class="floating-shapes">
+            <div class="shape shape-1"><i class="fas fa-code"></i></div>
+            <div class="shape shape-2"><i class="fas fa-palette"></i></div>
+            <div class="shape shape-3"><i class="fas fa-cube"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="mouse">
+        <div class="wheel"></div>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="section" id="about">
-    <h2 class="section-title">About Me</h2>
-    <p class="section-text">
-      I build modern, responsive web experiences. Clean code and minimal design are my passion.
-    </p>
+  <section class="section about-section" id="about">
+    <div class="container">
+      <h2 class="section-title"><span class="title-number">01.</span> About Me</h2>
+      <div class="about-content">
+        <div class="about-image reveal">
+          <div class="about-img-wrapper">
+            <img src="Assets/Images/Profile.png" alt="Ukesh Chand" />
+            <div class="experience-badge">
+              <span class="exp-number">5+</span>
+              <span class="exp-text">Years Experience</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <h3>I'm a <span class="gradient-text">Creative Developer</span> based in Nepal</h3>
+          <p>I specialize in building modern, responsive web experiences that combine stunning visuals with seamless functionality. With a passion for clean code and minimalist design, I transform ideas into digital reality.</p>
+          <p>My journey in web development started 5+ years ago, and I've been constantly learning and evolving with the latest technologies. I believe in creating websites that not only look beautiful but also provide exceptional user experiences.</p>
+          <div class="about-details">
+            <div class="detail-item">
+              <i class="fas fa-user"></i>
+              <span><strong>Name:</strong> Ukesh Chand</span>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-envelope"></i>
+              <span><strong>Email:</strong> ukeshchand12@gmail.com</span>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span><strong>Location:</strong> Nepal</span>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-briefcase"></i>
+              <span><strong>Availability:</strong> Open to Work</span>
+            </div>
+          </div>
+          <div class="about-btns">
+            <a href="#contact" class="btn btn-primary magnetic">Let's Talk</a>
+            <a href="#" class="btn btn-outline magnetic"><i class="fas fa-download"></i> Download CV</a>
+          </div>
+        </div>
+      </div>
+      <!-- Stats Counter -->
+      <div class="stats-container reveal">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+          <div class="stat-number" data-target="50">0</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+          <div class="stat-number" data-target="30">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+          <div class="stat-number" data-target="500">0</div>
+          <div class="stat-label">GitHub Commits</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-coffee"></i></div>
+          <div class="stat-number" data-target="1000">0</div>
+          <div class="stat-label">Coffees Consumed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section skills-section" id="skills">
+    <div class="container">
+      <h2 class="section-title"><span class="title-number">02.</span> Skills & Expertise</h2>
+      <p class="section-subtitle">Technologies and tools I work with</p>
+      <div class="skills-container">
+        <div class="skills-category reveal">
+          <h3><i class="fas fa-palette"></i> Frontend Development</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>HTML/CSS</span>
+                <span class="skill-percent">95%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>JavaScript</span>
+                <span class="skill-percent">90%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>React.js</span>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Vue.js</span>
+                <span class="skill-percent">80%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Tailwind CSS</span>
+                <span class="skill-percent">92%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="92%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-category reveal">
+          <h3><i class="fas fa-server"></i> Backend & Tools</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Node.js</span>
+                <span class="skill-percent">75%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Git/GitHub</span>
+                <span class="skill-percent">88%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="88%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>MongoDB</span>
+                <span class="skill-percent">70%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="70%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-category reveal">
+          <h3><i class="fas fa-pencil-ruler"></i> Design Tools</h3>
+          <div class="skills-icons">
+            <div class="skill-icon" data-tooltip="Figma">
+              <i class="fab fa-figma"></i>
+            </div>
+            <div class="skill-icon" data-tooltip="Adobe XD">
+              <i class="fas fa-vector-square"></i>
+            </div>
+            <div class="skill-icon" data-tooltip="Photoshop">
+              <i class="fab fa-adobe"></i>
+            </div>
+            <div class="skill-icon" data-tooltip="Illustrator">
+              <i class="fas fa-pen-nib"></i>
+            </div>
+            <div class="skill-icon" data-tooltip="Blender">
+              <i class="fas fa-cube"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE TIMELINE -->
+  <section class="section experience-section" id="experience">
+    <div class="container">
+      <h2 class="section-title"><span class="title-number">03.</span> Experience</h2>
+      <p class="section-subtitle">My professional journey</p>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2024 - Present</span>
+            <h3>Senior Frontend Developer</h3>
+            <h4>Tech Company Inc.</h4>
+            <p>Leading frontend development for enterprise applications. Implementing modern UI/UX patterns and mentoring junior developers.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2022 - 2024</span>
+            <h3>Frontend Developer</h3>
+            <h4>Digital Agency</h4>
+            <p>Developed responsive websites and web applications for various clients. Specialized in React and Vue.js development.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2021 - 2022</span>
+            <h3>UI/UX Designer</h3>
+            <h4>Creative Studio</h4>
+            <p>Designed user interfaces and experiences for mobile and web applications. Created wireframes, prototypes, and design systems.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2020 - 2021</span>
+            <h3>Junior Web Developer</h3>
+            <h4>StartUp Hub</h4>
+            <p>Started my professional journey building websites and learning modern web technologies. Focused on HTML, CSS, and JavaScript.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- PROJECTS -->
-  <section class="section dark" id="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="projects">
-      <div class="card slide-up">
-        <h3>Portfolio Website</h3>
-        <p>My personal responsive portfolio built with HTML, CSS & JS.</p>
-        <a href="https://github.com/ukeshchand/portfolio" target="_blank" class="card-btn">View Project</a>
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <h2 class="section-title"><span class="title-number">04.</span> Featured Projects</h2>
+      <p class="section-subtitle">Some things I've built</p>
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="app">App</button>
+        <button class="filter-btn" data-filter="design">Design</button>
       </div>
-      <div class="card slide-up delay-1">
-        <h3>Landing Page</h3>
-        <p>Animated landing page with modern UI and smooth effects.</p>
-        <a href="#" class="card-btn">View Project</a>
-      </div>
-      <div class="card slide-up delay-2">
-        <h3>Web App UI</h3>
-        <p>Clean and scalable frontend UI design for web apps.</p>
-        <a href="#" class="card-btn">View Project</a>
+      <div class="projects-grid">
+        <div class="project-card reveal" data-category="web">
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="E-Commerce Platform" />
+          </div>
+          <div class="project-info">
+            <h3>E-Commerce Platform</h3>
+            <p>A full-featured online store with cart functionality, payment integration, and admin dashboard.</p>
+            <div class="project-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card reveal" data-category="app">
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop" alt="Task Management App" />
+          </div>
+          <div class="project-info">
+            <h3>Task Management App</h3>
+            <p>A productivity app with drag-and-drop task organization, team collaboration, and real-time updates.</p>
+            <div class="project-tags">
+              <span>Vue.js</span>
+              <span>Firebase</span>
+              <span>Vuex</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card reveal" data-category="design">
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=600&h=400&fit=crop" alt="Dashboard UI Kit" />
+          </div>
+          <div class="project-info">
+            <h3>Dashboard UI Kit</h3>
+            <p>A comprehensive UI kit with 100+ components for building admin dashboards and analytics platforms.</p>
+            <div class="project-tags">
+              <span>Figma</span>
+              <span>Design System</span>
+              <span>Components</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card reveal" data-category="web">
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop" alt="Portfolio Website" />
+          </div>
+          <div class="project-info">
+            <h3>Portfolio Website</h3>
+            <p>My personal portfolio featuring modern animations, 3D effects, and a particle background system.</p>
+            <div class="project-tags">
+              <span>HTML/CSS</span>
+              <span>JavaScript</span>
+              <span>Three.js</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card reveal" data-category="app">
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop" alt="Weather App" />
+          </div>
+          <div class="project-info">
+            <h3>Weather Dashboard</h3>
+            <p>A beautiful weather application with real-time forecasts, location tracking, and animated weather icons.</p>
+            <div class="project-tags">
+              <span>React</span>
+              <span>API</span>
+              <span>CSS Animations</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card reveal" data-category="design">
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop" alt="Brand Identity" />
+          </div>
+          <div class="project-info">
+            <h3>Brand Identity System</h3>
+            <p>Complete brand identity design including logo, color palette, typography, and brand guidelines.</p>
+            <div class="project-tags">
+              <span>Branding</span>
+              <span>Logo Design</span>
+              <span>Guidelines</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="section contact" id="contact">
-    <h2 class="section-title">Contact Me</h2>
-    <div class="contact-cards">
-      <div class="contact-card">
-        <a href="mailto:ukeshchand12@gmail.com" class="contact-link">
-          <i class="fa-solid fa-envelope"></i>
-          <h3>Email</h3>
-          <p>ukeshchand12@gmail.com</p>
-        </a>
-      </div>
-      <div class="contact-card">
-        <a href="https://github.com/ukeshchand" target="_blank" class="contact-link">
-          <i class="fa-brands fa-github"></i>
-          <h3>GitHub</h3>
-          <p>ukeshchand</p>
-        </a>
-      </div>
-      <div class="contact-card">
-        <a href="https://www.linkedin.com/in/ukesh-chand/" target="_blank" class="contact-link">
-          <i class="fa-brands fa-linkedin"></i>
-          <h3>LinkedIn</h3>
-          <p>ukesh-chand</p>
-        </a>
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <h2 class="section-title"><span class="title-number">05.</span> Get In Touch</h2>
+      <p class="section-subtitle">Let's work together</p>
+      <div class="contact-content">
+        <div class="contact-info reveal">
+          <h3>Let's create something amazing together</h3>
+          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-text">
+                <span>Email</span>
+                <a href="mailto:ukeshchand12@gmail.com">ukeshchand12@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact-text">
+                <span>Location</span>
+                <span>Nepal</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="https://github.com/ukeshchand" target="_blank" class="social-btn"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ukesh-chand/" target="_blank" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/ukesshhh/" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-btn"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+            <span class="focus-border"></span>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required />
+            <span class="focus-border"></span>
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" name="subject" placeholder="Subject" required />
+            <span class="focus-border"></span>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            <span class="focus-border"></span>
+          </div>
+          <button type="submit" class="btn btn-primary magnetic submit-btn">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>Made with ❤️ by Ukesh. © 2026 All rights reserved</p>
+    <div class="footer-content">
+      <div class="footer-logo">UKESH<span>.</span></div>
+      <p class="footer-text">Building digital experiences with passion and precision.</p>
+      <div class="footer-social">
+        <a href="https://github.com/ukeshchand" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/ukesh-chand/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/ukesshhh/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="copyright">© 2026 Ukesh Chand. All rights reserved. Made with <i class="fas fa-heart"></i></p>
+    </div>
   </footer>
 
   <!-- JS -->
-  <script src="/JS/script.js"></script>
+  <script src="JS/script.js"></script>
 </body>
 </html>
